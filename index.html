@@ -3,124 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>상相 - AI 실시간 얼굴 분석 서비스</title>
-  <meta name="description" content="얼굴의 기하학적 비율과 대칭을 정밀 측정하여 개인의 성향과 밸런스 인사이트를 제공하는 프리미엄 데이터 분석 도구입니다.">
+  <title>내가 왕이 될 상인가 - AI 실시간 관상 분석</title>
+  <meta name="description" content="고대 관상학과 인공지능 기술의 조화. 얼굴 오관의 비례를 정밀 계측하여 격조 높은 왕실 관상 감정서를 선사합니다.">
   
-  <!-- Premium Fonts -->
+  <!-- Premium Fonts (Classic & Traditional Serifs + Technical Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;600;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Abstract Ambient Glow Background (No traditional backdrops) -->
-  <div class="ambient-glow"></div>
+  <!-- Background Traditional Lattice Backdrop with Starry Dark Navy Overlay -->
+  <div class="observatory-backdrop"></div>
+  <div class="stars-overlay"></div>
 
   <!-- Main Container -->
   <main class="main-container">
     
-    <!-- Premium Header -->
-    <header class="app-header">
-      <h1 class="logo-text">상<span>相</span></h1>
-      <p class="subtitle">AI Face Analytics</p>
+    <!-- Royal Header -->
+    <header class="royal-header">
+      <div class="emblem">👑</div>
+      <h1 class="logo-text">내가 왕이 될 상인가</h1>
+      <p class="subtitle">AI 觀相 鑑定所</p>
     </header>
 
-    <!-- STEP 1: Welcome / Product Hero Section -->
+    <!-- STEP 1: Welcome / Observatory Entrance -->
     <section id="welcome-screen" class="view-section active">
-      <div class="hero-section">
-        <!-- Visual Luminous Core -->
-        <div class="luminous-core-container">
-          <div class="luminous-core"></div>
-        </div>
-
-        <h2 class="hero-title">
-          얼굴의 기하학적 균형과<br>성향의 상관관계.
-        </h2>
-        <p class="hero-description">
-          카메라 인식 센서를 통해 얼굴 오관(五官)의 비례와 대칭을 실시간 정밀 측정합니다. 개인 고유의 구조적 데이터를 분석하고 밸런스 인사이트를 획득하십시오.
+      <div class="royal-scroll-welcome">
+        <div class="scroll-ornament scroll-top"></div>
+        
+        <p class="welcome-intro">
+          천 년의 통찰을 이어온 마의상법(麻衣相法)과<br>
+          현대 인공지능(AI) 페이셜 랜드마크 센서의 만남.
+        </p>
+        <p class="welcome-description">
+          얼굴 오관(오관)의 대칭과 비형을 기하학적으로 해독하여<br>
+          당신이 품은 고유의 기운과 성향적 밸런스를 측정합니다.<br>
+          왕실 관상가의 혜안으로 타고난 상의 격식을 확인해 보십시오.
         </p>
         
-        <div class="guide-box">
-          <div class="guide-item">
-            <span class="guide-num">01</span>
-            <span class="guide-txt">정면의 밝은 조도 환경 유지</span>
-          </div>
-          <div class="guide-item">
-            <span class="guide-num">02</span>
-            <span class="guide-txt">안경 및 마스크 착용 해제 권장</span>
-          </div>
+        <div class="instruction-box">
+          <div class="instruction-title">감정 시작 전 수칙</div>
+          <ul>
+            <li>정면의 안정적인 밝기를 확보해 주십시오.</li>
+            <li>안경이나 마스크는 잠시 벗어두는 것이 좋습니다.</li>
+            <li>얼굴 전면 인식을 위해 카메라 권한을 허용해 주십시오.</li>
+          </ul>
         </div>
 
-        <button id="btn-start" class="btn btn-primary">
-          <span class="btn-text">분석 시작하기</span>
+        <button id="btn-start" class="btn btn-gold">
+          <span class="btn-text">관상 감정 시작</span>
+          <span class="btn-deco"></span>
         </button>
 
-        <footer class="service-disclaimer">
-          본 도구는 정량적 비율 측정 결과를 기반으로 보조적인 분석 리포트를 제공하며, 성품이나 지능 등을 규정하지 않는 학술 및 엔터테인먼트 목적의 소프트웨어입니다.
+        <footer class="royal-disclaimer">
+          ※ 본 도구는 학술·오락 전용 문화 콘텐츠입니다. 개인의 성품, 능력, 성공 여부를 단정하지 않으며, 보조적인 데이터 해석 리포트를 제공합니다.
         </footer>
+        
+        <div class="scroll-ornament scroll-bottom"></div>
       </div>
     </section>
 
-    <!-- STEP 2: Scanner / Sensor View -->
+    <!-- STEP 2: Scanner / Celestial Viewport -->
     <section id="scanner-screen" class="view-section">
-      <div class="scanner-wrapper">
-        <div class="sensor-viewport">
+      <div class="observatory-scanner">
+        <div class="camera-viewport">
           <video id="webcam" autoplay playsinline muted></video>
           <canvas id="overlay-canvas"></canvas>
           
           <!-- Camera Error Overlay -->
           <div id="camera-error-overlay" class="camera-error-overlay">
-            <div class="error-icon">!</div>
-            <div class="error-title">카메라 감지 실패</div>
+            <div class="error-emblem">⚠️</div>
+            <div class="error-title">관상경 연결 오류</div>
             <p class="error-msg" id="camera-error-msg">
-              얼굴 정밀 분석을 위해 웹캠 권한 승인이 필요합니다. 브라우저 설정에서 활성화를 확인하십시오.
+              웹캠 장치에 접근할 수 없습니다.<br>
+              카메라 접근 권한 설정을 확인해 주십시오.
             </p>
-            <button id="btn-error-retry" class="btn btn-secondary">다시 시도</button>
+            <button id="btn-error-retry" class="btn btn-gold btn-sm">다시 감지</button>
           </div>
 
-          <!-- Sophisticated Viewfinder -->
+          <!-- Face Alignment Target -->
           <div class="face-guide-frame">
             <div class="face-guide-oval"></div>
-            <div class="guide-caption">정면을 응시한 채 정지해 주십시오</div>
+            <div class="guide-text">얼굴을 가이드라인 중앙에 정렬해 주십시오</div>
           </div>
         </div>
 
-        <!-- Realtime Analysis HUD -->
-        <div class="hud-panel">
+        <!-- Analyzer Status HUD Panel -->
+        <div class="scanner-hud">
           <div class="hud-header">
-            <span class="current-step-title">대기 중</span>
+            <span class="current-step-title">대기 중...</span>
             <span class="hud-progress-percent" id="hud-progress-percent">0%</span>
           </div>
           <div class="progress-bar-container">
             <div class="progress-fill" id="scanner-progress"></div>
           </div>
           <div class="scan-detail-msg" id="scan-message">
-            측정 모듈 전개 중
+            분석 장치 초기화 진행 중
           </div>
         </div>
       </div>
     </section>
 
-    <!-- STEP 3: Studio Flash Overlay -->
+    <!-- STEP 3: Shutter Flash Effect -->
     <div id="shutter-flash" class="shutter-flash"></div>
 
-    <!-- STEP 4: Results Editorial Report -->
+    <!-- STEP 4: Results Decrees -->
     <section id="result-screen" class="view-section">
       <div class="result-scroll-wrapper">
         
-        <!-- Elegant Insight Report Card (Toss/Apple Style) -->
-        <div id="result-card" class="result-card">
+        <!-- Premium Royal Scroll Card -->
+        <div id="result-card" class="result-scroll-card">
+          <div class="royal-border"></div>
           <div class="card-content">
+            <div class="stamp-deco">鑑定印</div>
             
-            <header class="report-header">
-              <span class="report-tag">ANALYTICS REPORT</span>
-              <h2 class="card-main-title">분석 인사이트 요약</h2>
-              <p class="card-subtitle">AI Face Metrics Report</p>
+            <header class="card-header">
+              <span class="card-crown">👑</span>
+              <h2 class="card-main-title">내가 왕이 될 상인가</h2>
+              <p class="card-subtitle">王室 觀相 鑑定書</p>
             </header>
 
-            <hr class="flat-divider">
+            <hr class="gold-divider-double">
 
             <!-- Captured Face Frame -->
             <div class="face-snapshot-container">
@@ -131,99 +137,121 @@
 
             <!-- Title & Features -->
             <div class="report-section title-section">
-              <div class="metric-label">구조적 성향 분류</div>
-              <h3 id="result-title" class="matched-title">전략적 조율형</h3>
+              <span class="section-label">최종 관상 격식</span>
+              <h3 id="result-title" class="matched-title">학자의 상 (學者之相)</h3>
               <div id="result-features-list" class="feature-tags">
-                <!-- Dynamically Generated -->
+                <!-- Generated Dynamically -->
               </div>
             </div>
 
-            <hr class="flat-divider">
+            <hr class="gold-divider-single">
 
-            <!-- Quantitative Metrics (Horizontal Bars instead of traditional stars) -->
-            <div class="report-section energy-metrics-section">
-              <div class="metric-label">요소별 강점 지표</div>
-              <div class="metrics-grid">
-                <div class="metric-group">
-                  <div class="group-title">우수 요인 (Top Traits)</div>
-                  <ul id="positive-energies" class="metric-progress-list">
-                    <!-- Generated Dynamically -->
-                  </ul>
-                </div>
-                
-                <div class="metric-group">
-                  <div class="group-title">보완 요인 (Adjustments)</div>
-                  <ul id="warning-energies" class="metric-progress-list">
-                    <!-- Generated Dynamically -->
-                  </ul>
-                </div>
+            <!-- Energy Scores (Bars) -->
+            <div class="report-section energies-grid">
+              <div class="energy-column positive">
+                <span class="energy-title">조화로운 우수 기운</span>
+                <ul id="positive-energies" class="energy-progress-list">
+                  <!-- Generated Dynamically -->
+                </ul>
+              </div>
+              
+              <div class="energy-column warning">
+                <span class="energy-title">보완을 권하는 기운</span>
+                <ul id="warning-energies" class="energy-progress-list">
+                  <!-- Generated Dynamically -->
+                </ul>
               </div>
             </div>
 
-            <hr class="flat-divider">
+            <hr class="gold-divider-single">
 
-            <!-- Master Insight Text -->
-            <div class="report-section insight-section">
-              <div class="metric-label">종합 데이터 해석</div>
-              <div class="insight-box">
-                <p id="review-text" class="insight-paragraph">
-                  대칭성과 부위별 특징 데이터를 종합적으로 해석한 결과입니다.
+            <!-- Pros & Cons Section -->
+            <div class="report-section values-grid">
+              <div class="value-column pros">
+                <span class="section-label">성향적 장점 (長處)</span>
+                <ul id="result-pros" class="bullet-list">
+                  <!-- Generated Dynamically -->
+                </ul>
+              </div>
+              <div class="value-column cons">
+                <span class="section-label">조율이 이로운 점 (愼重)</span>
+                <ul id="result-cons" class="bullet-list">
+                  <!-- Generated Dynamically -->
+                </ul>
+              </div>
+            </div>
+
+            <hr class="gold-divider-single">
+
+            <!-- Physiognomy Master Review -->
+            <div class="report-section review-section">
+              <span class="section-label">관상가 총평 (鑑定評)</span>
+              <div class="review-box">
+                <p id="review-text" class="review-content">
+                  오관의 비례 데이터를 분석한 최종 평론을 작성 중입니다.
                 </p>
+                <div class="signature">왕실 관상 감정관 백</div>
               </div>
             </div>
 
-            <hr class="flat-divider">
+            <hr class="gold-divider-single">
 
-            <!-- Structural Data Details -->
+            <!-- Decision Rationale Detail -->
             <div class="report-section details-section">
-              <div class="metric-label">측정 부위별 기하학 근거</div>
+              <span class="section-label">신체 부위별 계측 판정</span>
               <ul id="metric-rationale-list" class="rationale-list">
                 <!-- Detailed metrics here -->
               </ul>
             </div>
-            
+
+            <div class="card-fineprint">
+              본 감정서는 얼굴 랜드마크 분석 및 정면 대칭 비례 측정을 바탕으로 전통 관상 해석 기준을 매핑하여 작성된 오락/학술 리포트입니다.
+            </div>
           </div>
         </div>
 
-        <!-- Premium Solution Recommendation -->
-        <div class="recommendation-card">
-          <span class="report-tag accent">WELLNESS SOLUTION</span>
-          <h4 id="reco-title" class="reco-title">부족한 지표 보완을 위한 솔루션</h4>
+        <!-- Product Compensation Recommendation -->
+        <div class="recommendation-scroll-card">
+          <div class="scroll-ornament scroll-top"></div>
+          <span class="section-label accent">관상 보완 방책 (觀相補完)</span>
+          <h4 id="reco-title" class="reco-title">부족한 기운을 다스리기 위한 추천 방책</h4>
           <p id="reco-explanation" class="reco-desc">
-            특정 부위의 비대칭을 완화하고 근육의 정밀한 정돈을 유도하는 기하학적 밸런스 케어 제품군입니다.
+            얼굴 구조 중 비대칭을 조율하고 특정 오관의 기운을 다듬어 조화로운 안면 밸런스를 유도하는 웰니스 처방입니다.
           </p>
           
           <div class="reco-product-showcase">
-            <img id="reco-image" src="assets/image1.png" alt="추천 제품">
+            <img id="reco-image" src="assets/image1.png" alt="보완 추천 상품">
           </div>
 
           <div class="reco-actions">
-            <a href="#" target="_blank" class="btn btn-secondary-outline" id="btn-view-product">제품 상세 정보</a>
-            <a href="#" target="_blank" class="btn btn-primary-sm" id="btn-buy-product">제품 선택하기</a>
+            <a href="#" target="_blank" class="btn btn-outline" id="btn-view-product">제품 상세 방안</a>
+            <a href="#" target="_blank" class="btn btn-gold-sm" id="btn-buy-product">보완물 획득</a>
           </div>
+          <div class="scroll-ornament scroll-bottom"></div>
         </div>
 
-        <!-- Utility Action Row -->
+        <!-- Utility Actions -->
         <div class="action-buttons-container">
-          <button id="btn-restart" class="btn btn-secondary">다시 측정하기</button>
-          <button id="btn-share" class="btn btn-primary">리포트 다운로드</button>
+          <button id="btn-restart" class="btn btn-dark">다시 감정받기</button>
+          <button id="btn-share" class="btn btn-gold-solid">감정서 다운로드</button>
         </div>
 
         <p class="final-bottom-notes">
-          © 2026 AI Face Analytics “상相”. All rights reserved.
+          © 2026 AI 왕실 관상 감정원. All rights reserved.
         </p>
 
       </div>
     </section>
 
-    <!-- LOADING OVERLAYS -->
+    <!-- LOADING SPINNER (Overlays) -->
     <div id="global-loader" class="loader-overlay">
       <div class="loader-content">
-        <div class="spinner-core">
-          <div class="spinner-orbit"></div>
+        <div class="spinner">
+          <div class="spinner-ring"></div>
+          <div class="spinner-center">👑</div>
         </div>
-        <div class="loader-title">분석 엔진 구동 중</div>
-        <div class="loader-subtitle">실시간 랜드마크 모델 초기화 단계...</div>
+        <div class="loader-title">관상가의 혜안을 여는 중</div>
+        <div class="loader-subtitle">AI 관상 판정 모델의 랜드마크 엔진을 전개하고 있습니다...</div>
       </div>
     </div>
 
@@ -241,21 +269,21 @@
           warningDiv.style.bottom = '20px';
           warningDiv.style.left = '50%';
           warningDiv.style.transform = 'translateX(-50%)';
-          warningDiv.style.backgroundColor = '#1D1D1F';
-          warningDiv.style.color = '#F5F5F7';
-          warningDiv.style.border = '1px solid rgba(255, 127, 80, 0.2)';
-          warningDiv.style.padding = '15px 20px';
-          warningDiv.style.borderRadius = '12px';
-          warningDiv.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+          warningDiv.style.backgroundColor = '#161B22';
+          warningDiv.style.color = '#F0F6FC';
+          warningDiv.style.border = '1px solid #B88A44';
+          warningDiv.style.padding = '18px 25px';
+          warningDiv.style.borderRadius = '8px';
+          warningDiv.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
           warningDiv.style.zIndex = '999999';
           warningDiv.style.textAlign = 'center';
-          warningDiv.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-          warningDiv.style.fontSize = '0.85rem';
-          warningDiv.style.lineHeight = '1.4';
+          warningDiv.style.fontFamily = 'system-ui, -apple-system, BlinkMacSystemFont, sans-serif';
+          warningDiv.style.fontSize = '0.9rem';
+          warningDiv.style.lineHeight = '1.5';
           warningDiv.style.width = '90%';
-          warningDiv.style.maxWidth = '440px';
+          warningDiv.style.maxWidth = '500px';
           warningDiv.innerHTML = `
-            <strong style="color: #FF8A65; display: block; margin-bottom: 4px;">⚠️ 로컬 파일(file://) 실행 보안 제한</strong>
+            <strong style="color: #B88A44; display: block; margin-bottom: 6px; font-size: 1rem;">⚠️ 로컬 파일(file://) 실행 보안 제한</strong>
             브라우저 보안 정책(CORS)으로 인해 index.html을 더블클릭해서 열면 동작하지 않습니다.<br>
             로컬 웹 서버(VS Code Live Server 등)로 열거나, GitHub Pages에 업로드하여 실행해 주시기 바랍니다.
           `;
