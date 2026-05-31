@@ -655,16 +655,16 @@ function evaluatePhysiognomy(metrics) {
 
 function calculateFinalReport(selections, metrics) {
   const energyLevels = {
-    leadership: 5,     // 통솔력
-    judgment: 5,       // 판단력
-    wealth: 5,         // 재물운
-    power: 5,          // 권력운
-    interpersonal: 5,  // 대인운
-    relationship: 5,   // 인간관계운
-    social: 5,         // 사회운
-    lateLife: 5,       // 말년운
-    drive: 5,          // 추진력
-    determination: 5   // 결단력
+    leadership: 3.5,
+    judgment: 3.5,
+    wealth: 3.5,
+    power: 3.5,
+    interpersonal: 3.5,
+    relationship: 3.5,
+    social: 3.5,
+    lateLife: 3.5,
+    drive: 3.5,
+    determination: 3.5
   };
 
   const mapAttrToKey = (koreanAttr) => {
@@ -677,38 +677,42 @@ function calculateFinalReport(selections, metrics) {
   };
 
   Object.keys(selections).forEach(key => {
-    const item = selections[key].item;
+    const selection = selections[key];
+    const item = selection.item;
+    const scoreNorm = selection.score / 100; // 0.1 ~ 1.0
+
     if (item && item.good) {
       item.good.forEach(attr => {
         const attrKey = mapAttrToKey(attr);
-        if (attrKey) energyLevels[attrKey] += 1.5;
+        if (attrKey) energyLevels[attrKey] += 1.5 * scoreNorm;
       });
     }
     if (item && item.weak) {
       item.weak.forEach(attr => {
         const attrKey = mapAttrToKey(attr);
-        if (attrKey) energyLevels[attrKey] -= 1.2;
+        if (attrKey) energyLevels[attrKey] -= 1.2 * scoreNorm;
       });
     }
   });
 
-  // Structural Adjustments
+  // Structural Adjustments based on metrics
   if (metrics.mouth.tilt < -0.01) {
-    energyLevels.relationship -= 1.0;
-    energyLevels.lateLife -= 1.0;
+    energyLevels.relationship -= 0.8;
+    energyLevels.lateLife -= 0.8;
   }
   if (metrics.eyebrow.tilt < -3) {
-    energyLevels.interpersonal -= 1.0;
-    energyLevels.drive -= 1.0;
+    energyLevels.interpersonal -= 0.8;
+    energyLevels.drive -= 0.8;
   }
   if (metrics.cheekbones.prominence < 0.79) {
-    energyLevels.power -= 1.0;
-    energyLevels.leadership -= 1.0;
+    energyLevels.power -= 0.8;
+    energyLevels.leadership -= 0.8;
   }
 
   const normalizedRatings = {};
   Object.keys(energyLevels).forEach(key => {
-    normalizedRatings[key] = Math.max(1, Math.min(5, Math.round(energyLevels[key] * 2) / 2));
+    // 0.1 단위 정교한 값 도출 (변별력 향상)
+    normalizedRatings[key] = Math.max(1.0, Math.min(5.0, Math.round(energyLevels[key] * 10) / 10));
   });
 
   let bestTitle = null;
@@ -1090,39 +1094,7 @@ function compilePhysiognomyReport() {
   sortedTraits.slice(0, 4).forEach(item => renderMetricRow(item, positiveEnergiesList));
   sortedTraits.slice(-2).forEach(item => renderMetricRow(item, warningEnergiesList));
 
-  // Editorial Insight paragraph builder (Strictly dry, assertive sentences)
-  let review = "";
-  const eyeName = selections.eye.item.name.split(" ")[0];
-  const noseName = selections.nose.item.name.split(" ")[0];
-  const topTrait = mapKeyToKorean(sortedTraits[0].key);
-  const weakestTraitKey = sortedTraits[sortedTraits.length - 1].key;
-  const weakestTraitName = mapKeyToKorean(weakestTraitKey);
-  
-  review += `안형 대조 상 '${eyeName}'이(가) 나타나며 비형 비례로는 '${noseName}' 범주에 정렬됨. `;
-  review += `전체 대칭 대비 '${topTrait}' 계수가 평균 기준값을 크게 상회하여 목표에 대한 주도적 실행성과 분석 판단 능력이 우세한 양상을 보임. `;
-  review += `턱뼈 각도 및 하관 구조에 기반해 자율적 의사결정을 우선시하는 경향이 뚜렷함. `;
-  review += `다만, '${weakestTraitName}' 지표가 대칭 구조상 하위 레벨에 위치하여, 다자간 소통 및 점진적 조율 환경에서 결정 병목을 겪을 취약성이 존재함.`;
-
-  reviewText.textContent = review;
-
-  // Technical metrics list
-  metricRationaleList.innerHTML = "";
-  const rationales = [
-    `눈: 가로-세로 비율(${metrics.eye.ratio.toFixed(1)}), 눈꼬리 편차(${metrics.eye.tilt.toFixed(1)}°) 기준 분석 일치율 84%`,
-    `눈썹: 기하학적 정렬 경사(${metrics.eyebrow.tilt.toFixed(1)}°) 및 너비 비율(${metrics.eyebrow.length.toFixed(2)}) 산출 대입 완료`,
-    `코: 얼굴 세로 대비 비골 길이(${metrics.nose.lengthRatio.toFixed(2)}), 콧망울 분포도(${metrics.nose.widthRatio.toFixed(2)}) 정밀 필터 매핑`,
-    `입: 입꼬리 꼬임 각도(${metrics.mouth.tilt.toFixed(3)}) 기반 소통 수용체 지향점 분류 매칭`,
-    `광대 & 턱: 광대 돌출 계수(${metrics.cheekbones.prominence.toFixed(2)}), 하단 턱뼈 각도(${metrics.jaw.angle.toFixed(1)}°) 기하 지표 추출`,
-    `이마: 전두골 영역 비율(${metrics.forehead.heightRatio.toFixed(2)})을 이용한 분석 데이터 최적 매칭`
-  ];
-
-  rationales.forEach(text => {
-    const li = document.createElement("li");
-    li.textContent = text;
-    metricRationaleList.appendChild(li);
-  });
-
-  // Wellness Solutions Showcases matching
+  // Determine lowest metric group to connect facial features, weak luck, and product recommendations
   const group1Score = (report.ratings.interpersonal + report.ratings.drive) / 2;
   const group2Score = (report.ratings.relationship + report.ratings.lateLife) / 2;
   const group3Score = (report.ratings.power + report.ratings.leadership) / 2;
@@ -1139,21 +1111,73 @@ function compilePhysiognomyReport() {
     chosenGroup = 3;
   }
 
+  let targetFeatureName = "";
+  let targetFeatureState = "";
+  let targetEnergyName = "";
+  
   if (chosenGroup === 1) {
-    recoTitle.textContent = "추진성 및 대인 조화 밸런싱 솔루션";
-    recoExplanation.innerHTML = `대인 감수성과 추진 효율성 향상을 돕는 정교한 밸런싱 디바이스입니다.<br>눈썹 라인 및 대칭성 유지를 돕는 페이셜 트리머 제품군.`;
+    targetFeatureName = "눈썹(眉)";
+    targetFeatureState = selections.eyebrow.item.name.split(" ")[0]; // e.g., 용미, 일자미
+    targetEnergyName = "대인 조화력 및 추진 지표";
+  } else if (chosenGroup === 2) {
+    targetFeatureName = "입(口)";
+    targetFeatureState = selections.mouth.item.name.split(" ")[0]; // e.g., 용구, 월형구
+    targetEnergyName = "대인 관계도 및 말년 안정성";
+  } else {
+    targetFeatureName = "광대(顴)";
+    targetFeatureState = selections.cheekbones.item.name.split(" ")[0]; // e.g., 장군광대, 평형광대
+    targetEnergyName = "사회적 통솔력 및 권한 지표";
+  }
+
+  // Editorial Insight paragraph builder (Strictly dry, assertive sentences linking specific facial features to the weakness)
+  let review = "";
+  const eyeName = selections.eye.item.name.split(" ")[0];
+  const noseName = selections.nose.item.name.split(" ")[0];
+  const topTrait = mapKeyToKorean(sortedTraits[0].key);
+  const weakestTraitKey = sortedTraits[sortedTraits.length - 1].key;
+  const weakestTraitName = mapKeyToKorean(weakestTraitKey);
+  
+  review += `안형 정밀 대조 상 '${eyeName}' 안형이 검출되며, 비골 대칭으로는 '${noseName}' 비형으로 정렬됨. `;
+  review += `오관의 대칭 균형 중 '${topTrait}' 계수가 ${Math.round(sortedTraits[0].val * 20)}%로 가장 우수하여 전략적 판단과 조직 관리 속도가 빠른 경향이 우세함. `;
+  review += `반면, 현재 ${targetFeatureName}의 골격선과 균형이 '${targetFeatureState}'형 분포에 치우쳐 있어, 이와 직접 연동된 '${weakestTraitName}' 수치가 ${Math.round(sortedTraits[sortedTraits.length - 1].val * 20)}% 수준으로 하락함. `;
+  review += `이에 따라 전체적인 ${targetEnergyName} 부문에서 리스크 제어 및 조율 한계가 도출되는 경향을 보임.`;
+
+  reviewText.textContent = review;
+
+  // Technical metrics list - Displays "눈은 무슨 눈, 코는 무슨 코" explicitly for all 7 features
+  metricRationaleList.innerHTML = "";
+  const rationales = [
+    `• 눈(眼): ${selections.eye.item.name} [일치율 ${selections.eye.score}%] - 가로-세로 비율(${metrics.eye.ratio.toFixed(1)}), 눈꼬리 편차(${metrics.eye.tilt.toFixed(1)}°) 계측`,
+    `• 눈썹(眉): ${selections.eyebrow.item.name} [일치율 ${selections.eyebrow.score}%] - 정렬 경사(${metrics.eyebrow.tilt.toFixed(1)}°) 및 너비 비율(${metrics.eyebrow.length.toFixed(2)}) 산출`,
+    `• 코(鼻): ${selections.nose.item.name} [일치율 ${selections.nose.score}%] - 비골 길이(${metrics.nose.lengthRatio.toFixed(2)}), 콧망울 분포도(${metrics.nose.widthRatio.toFixed(2)}) 필터 매핑`,
+    `• 입(口): ${selections.mouth.item.name} [일치율 ${selections.mouth.score}%] - 입꼬리 상승 곡률(${metrics.mouth.tilt.toFixed(3)}) 및 종횡비(${metrics.mouth.ratio.toFixed(1)}) 비교`,
+    `• 광대(顴): ${selections.cheekbones.item.name} [일치율 ${selections.cheekbones.score}%] - 광골 융기 계수(${metrics.cheekbones.prominence.toFixed(2)}) 대칭도 검출`,
+    `• 턱(頤): ${selections.jaw.item.name} [일치율 ${selections.jaw.score}%] - 하단 턱뼈 각도(${metrics.jaw.angle.toFixed(1)}°) 및 하관 면적 대비(${metrics.jaw.widthRatio.toFixed(2)})`,
+    `• 이마(額): ${selections.forehead.item.name} [일치율 ${selections.forehead.score}%] - 전두골 영역 높이 비율(${metrics.forehead.heightRatio.toFixed(2)}) 매칭 완료`
+  ];
+
+  rationales.forEach(text => {
+    const li = document.createElement("li");
+    li.textContent = text;
+    metricRationaleList.appendChild(li);
+  });
+
+  // Wellness Solutions Showcases matching (Linked with the lowest group)
+  if (chosenGroup === 1) {
+    recoTitle.textContent = `${targetFeatureName} 보정을 통한 ${targetEnergyName} 보완`;
+    recoExplanation.innerHTML = `얼굴 분석 결과 ${targetFeatureName}이(가) '${targetFeatureState}'의 상태를 보이고 있어, 이로 인해 상대적으로 약화된 <strong>추진 에너지 및 대인 신뢰도</strong> 지표를 높이기 위한 집중 보완 솔루션입니다. 눈썹의 균형을 고르게 조율하는 데 기여하는 제품군입니다.`;
     recoImage.src = "assets/image1.png";
     btnViewProduct.href = "https://www.hermes.com/kr/ko/product/아이브로우-펜셜-H083072V010/";
     btnBuyProduct.href = "https://www.hermes.com/kr/ko/category/뷰티/눈/";
   } else if (chosenGroup === 2) {
-    recoTitle.textContent = "소통 안정성 및 균형 조율 솔루션";
-    recoExplanation.innerHTML = `근육 이완을 도와 일관되고 품격 있는 의사소통 태도를 조화롭게 돕는 밸런싱 악세서리군입니다.<br>입매 주변 근육 이완 가이드 케어 솔루션.`;
+    recoTitle.textContent = `${targetFeatureName} 보정을 통한 ${targetEnergyName} 보완`;
+    recoExplanation.innerHTML = `얼굴 분석 결과 ${targetFeatureName}의 정렬이 '${targetFeatureState}'형태를 띠고 있어, 이로 인해 연동 하락한 <strong>대인 조화 및 말년 지수</strong>를 조화롭게 가동하기 위한 솔루션입니다. 입매 주변 근육의 비대칭 긴장을 해소하고 정돈을 유도합니다.`;
     recoImage.src = "assets/image2.png";
     btnViewProduct.href = "https://www.rolex.com/ko/watches/find-rolex";
     btnBuyProduct.href = "https://www.rolex.com/ko/watches/find-rolex/classic-watches";
   } else {
-    recoTitle.textContent = "주도적 지표 및 대칭 가속 솔루션";
-    recoExplanation.innerHTML = `안면 가로선 중심부의 피로도를 해소하고 대칭 균형을 보정하는 데 기여하는 마사저 제품군입니다.<br>광대 및 얼굴 선 교정 정밀 마사저 기기.`;
+    recoTitle.textContent = `${targetFeatureName} 보정을 통한 ${targetEnergyName} 보완`;
+    recoExplanation.innerHTML = `얼굴 분석 결과 ${targetFeatureName}의 융기 균형이 '${targetFeatureState}'의 상태를 지니고 있어, 이로 인해 결여된 <strong>조직 통솔력 및 권한 지수</strong>를 상승시키기 위한 솔루션입니다. 광대 및 페이셜 윤곽 대칭 라인을 설계해 줍니다.`;
     recoImage.src = "assets/image3.png";
     btnViewProduct.href = "https://www.hermes.com/kr/ko/product/페이스-마사저-H083110V000/";
     btnBuyProduct.href = "https://www.hermes.com/kr/ko/category/뷰티/페이스/";
