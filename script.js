@@ -1359,7 +1359,7 @@ async function downloadReportCard() {
 
   // Trigger file download
   const link = document.createElement("a");
-  link.download = `상相_FaceMetricsReport_${Date.now()}.png`;
+  link.download = `sang_FaceMetricsReport_${Date.now()}.png`;
   link.href = canvas.toDataURL("image/png");
   link.click();
 }
