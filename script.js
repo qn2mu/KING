@@ -1386,7 +1386,7 @@ function compilePhysiognomyReport() {
   } else if (chosenGroup === 2) {
     recoTitle.textContent = `${targetFeatureName} 보정을 통한 ${targetEnergyName} 보완`;
     recoExplanation.innerHTML = `얼굴 분석 결과 ${targetFeatureName}의 정렬이 '${targetFeatureState}' 형태를 띠고 있어, 입술 주변의 하관 라인을 정돈하여 약화된 <strong>말년 안정 및 부부 가정운</strong>을 보강하고, 가문의 복록을 노년까지 안정적으로 이끌어가기 위한 솔루션입니다.`;
-    recoImage.src = "assets/image2.png";
+    recoImage.src = "assets/image2.jpg";
     btnViewProduct.href = "https://www.rolex.com/ko/watches/find-rolex";
     btnBuyProduct.href = "https://www.rolex.com/ko/watches/find-rolex/classic-watches";
   } else {
@@ -1397,7 +1397,6 @@ function compilePhysiognomyReport() {
     btnBuyProduct.href = "https://www.hermes.com/kr/ko/category/뷰티/페이스/";
   }
 }
-
 /* ==========================================================================
    NAVIGATION
    ========================================================================== */
