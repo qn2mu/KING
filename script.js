@@ -14,8 +14,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["대인운"],
       caution: "스스로에 대한 엄격함으로 인해 주변인들과 조화로운 타협이 다소 어려울 수 있다고 보기도 합니다.",
       target: { ratio: 3.8, tilt: 10, symmetry: 0.95 },
-      pros: ["침착함", "신중함", "장기적 시야"],
-      cons: ["감정 표현이 적어 보일 수 있음", "친해지는 데 시간이 필요할 수 있음"]
+      pros: ["평생 명예운과 관운이 매우 길함", "초년 학업운과 총명함이 돋보임", "학식과 품위를 얻을 기상"],
+      cons: ["스스로 엄격하여 자손운 및 부부운이 다소 고독해질 조짐이 있음", "대인 인덕이 부족하여 고립될 수 있음"]
     },
     {
       name: "용안 (龍眼)",
@@ -25,8 +25,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["인간관계운"],
       caution: "자기 확신이 지나치게 우세하여 주변의 경고나 타당한 조언을 배척할 우려가 있다고 해석하기도 합니다.",
       target: { ratio: 3.0, tilt: 7, symmetry: 0.96 },
-      pros: ["리더십", "추진력", "안정된 시선"],
-      cons: ["자신감이 강하게 비칠 수 있음"]
+      pros: ["큰 조직을 지휘하는 강력한 권력운을 지님", "중년기 이후 자수성가할 재물운이 높음", "평생 명성이 널리 퍼질 운세"],
+      cons: ["독단적 기세로 인해 대인운과 인덕이 다소 부족할 수 있음", "부부운에 갈등이나 마찰이 잦을 수 있음"]
     },
     {
       name: "호안 (虎眼)",
@@ -36,8 +36,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["대인운"],
       caution: "급하고 과격한 추진 기향으로 인해 예기치 못한 주변 마찰이 잦을 수 있다고 봅니다.",
       target: { ratio: 2.3, tilt: -2, symmetry: 0.94 },
-      pros: ["결단력", "행동력", "뚜렷한 시선"],
-      cons: ["경쟁심이 강하게 보일 수 있음"]
+      pros: ["난관을 기백으로 돌파할 직업운이 강함", "중년기에 막대한 부를 거머쥘 운세", "경쟁운에서 필승할 에너지를 품음"],
+      cons: ["급한 성정으로 인해 구설수나 대인 마찰이 잦을 수 있음", "감정 조절 실패로 인한 금전적 손실 주의"]
     },
     {
       name: "학안 (鶴眼)",
@@ -47,8 +47,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["추진력"],
       caution: "속세적 승부처나 공격적 재물 획득 상황에서 스스로 물러서는 경향이 강하다고 해석합니다.",
       target: { ratio: 3.1, tilt: 1, symmetry: 0.95 },
-      pros: ["지적 이미지", "차분함", "부드러운 눈"],
-      cons: ["다소 소극적으로 보일 수 있음"]
+      pros: ["학문적 성취와 명예운이 일찍 가득함", "평생 큰 병치레 없이 무병장수할 건강운", "부모와 조상의 덕을 크게 입을 초년운"],
+      cons: ["재물을 적극적으로 쟁취하는 경쟁 재물운이 부족할 수 있음", "속세의 경쟁에서 물러나 안주하려는 성향"]
     },
     {
       name: "사안 (蛇眼)",
@@ -58,8 +58,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["대인운"],
       caution: "단독 지향적인 판단 기조로 인해 집단적 협업에서 고립을 야기하기 쉽다고 조언합니다.",
       target: { ratio: 3.6, tilt: -4, symmetry: 0.92 },
-      pros: ["치밀한 분석력", "목표 집중도"],
-      cons: ["독단적인 성향으로 비칠 수 있음"]
+      pros: ["치밀한 전략으로 횡재수나 투자운이 매우 강함", "기회를 낚아채는 빠른 성공운을 품음", "남보다 앞서는 명민한 직업운"],
+      cons: ["고립 자초로 인해 말년운과 자손운에 외로움이 깃들 조짐", "배우자와의 동반운에 균열이 생길 우려"]
     },
     {
       name: "장안 (豹眼)",
@@ -69,8 +69,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["인간관계운"],
       caution: "적과 동지를 확실히 나누는 성정으로 인해 아랫사람과의 융화가 약화될 수 있다고 봅니다.",
       target: { ratio: 2.6, tilt: 3, symmetry: 0.94 },
-      pros: ["도전 정신", "빠른 실행력"],
-      cons: ["아랫사람과의 갈등을 겪을 수 있음"]
+      pros: ["스스로 가문을 일으킬 강력한 자수성가형 재물운", "위기를 극복하는 끈질긴 직업운과 생활력", "독립적인 신흥 개척의 운세"],
+      cons: ["아랫사람 복(인덕)이 부족하여 부하로 인한 손실 가능성", "친척 및 형제운과의 교류가 드물어 외로울 수 있음"]
     },
     {
       name: "원안 (圓眼)",
@@ -80,8 +80,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["결단력"],
       caution: "성품이 다소 모질지 못하여 타인의 부탁에 휩쓸려 손실을 입을 우려가 존재합니다.",
       target: { ratio: 1.9, tilt: 0, symmetry: 0.97 },
-      pros: ["대인 친화력", "유연한 융화력"],
-      cons: ["결정적 순간에 결단이 흔들릴 수 있음"]
+      pros: ["대인운과 귀인운이 평생을 따라다님", "자손운이 풍성하고 가정이 화목한 복록", "평생 먹고사는 데 걱정이 없는 식복(食福)"],
+      cons: ["남의 말을 쉽게 믿어 타인으로 인한 재물 누수의 조짐", "결정적인 승부운에서 기세를 놓칠 우려"]
     },
     {
       name: "세안 (細眼)",
@@ -91,8 +91,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["추진력"],
       caution: "과도한 숙고로 인해 일시에 도래하는 일생일대의 돌파 기회를 놓칠 가능성이 있다고 조언합니다.",
       target: { ratio: 4.1, tilt: 0, symmetry: 0.95 },
-      pros: ["리스크 관리", "신중함", "안정성"],
-      cons: ["최적의 타이밍을 지연시킬 수 있음"]
+      pros: ["평생 마르지 않는 곳간처럼 재물운이 매우 두터움", "말년까지 안정적인 가산 유지 및 부귀운", "체계적 리스크 관리로 위기를 비껴가는 운세"],
+      cons: ["지나친 조심성으로 인해 인생의 큰 도약 기회를 미룰 수 있음", "과도한 생각으로 인해 심혈관계 건강운 저하 조짐"]
     }
   ],
   eyebrows: [
@@ -104,8 +104,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["결단력"],
       caution: "동료의 시선을 우선 의식하느라 자신 고유의 의사결정을 늦추는 경향이 있습니다.",
       target: { tilt: 8, length: 1.35 },
-      pros: ["책임감", "조직 통솔력"],
-      cons: ["고집이 세다는 인상을 줄 수 있음"]
+      pros: ["귀인의 원조를 받는 대인운과 인덕이 대단히 풍부함", "형제 및 동료의 조력운이 일생을 지탱함", "관운이 열려 명예를 널리 떨침"],
+      cons: ["주변 눈치를 보다가 중요한 사업적 결단을 늦추어 실망할 우려", "배우자운에 지나치게 헌신하여 속앓이 가능성"]
     },
     {
       name: "일자미 (一字眉)",
@@ -115,8 +115,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["인간관계운"],
       caution: "협의를 배제하는 완고함으로 인해 대외 소통에서 불화를 자초하기 쉬운 상으로 조언합니다.",
       target: { tilt: 1, length: 1.25 },
-      pros: ["논리적 사고", "체계적 계획성"],
-      cons: ["융통성이 다소 부족해 보일 수 있음"]
+      pros: ["꺾이지 않는 신념으로 직업운의 빠른 성공을 보장함", "중년기 자산 축적운이 강력하고 단단함", "사악한 기운을 물리쳐 건강을 지킴"],
+      cons: ["타협을 배제하여 말년의 부부운 및 자손운에 외로움이 따름", "고집으로 인해 주변과의 동업운이 틀어질 조짐"]
     },
     {
       name: "검미 (劍眉)",
@@ -126,8 +126,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["대인운"],
       caution: "스스로와 타인에게 극도로 엄격한 잣대를 들이대며 주변을 경직시킬 수 있습니다.",
       target: { tilt: 14, length: 1.2 },
-      pros: ["추진력", "강한 실행력"],
-      cons: ["다소 급하고 성급해 보일 수 있음"]
+      pros: ["과감한 판단력으로 위기를 돌파할 강한 운세", "사법직, 군경 등 공직에서의 명예운과 관운이 높음", "외세의 억압을 뚫고 성공할 대운"],
+      cons: ["성정이 예리하고 날카로워 돌발적인 사고수나 건강운 주의 필요", "가족 간의 대화 단절로 자손운이 약해질 우려"]
     },
     {
       name: "월미 (月眉)",
@@ -137,8 +137,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["추진력"],
       caution: "경쟁이 격화되는 비즈니스 현장에서 결단 기백이 주저앉기 쉬운 취약성이 따릅니다.",
       target: { tilt: 6, length: 1.4 },
-      pros: ["감수성", "소통 융화력"],
-      cons: ["갈등 회피 성향으로 해석될 수 있음"]
+      pros: ["수려한 감각과 재능으로 학문/예술적 명예운이 높음", "평생 주변의 사랑과 돌봄을 받는 큰 인덕", "부부운이 매우 아름다워 가정이 평화로움"],
+      cons: ["경쟁이 치열한 사업적 환경에서 기세가 꺾여 직업운에 부침", "재물 쟁취의 추진력이 다소 부족하여 큰 부를 모으기에 지연됨"]
     },
     {
       name: "팔자미 (八字眉)",
@@ -148,8 +148,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["추진력", "결단력"],
       caution: "스스로 기치를 들고 가동하는 힘이 모자라 타인의 결정을 쫓아 가기 쉽습니다.",
       target: { tilt: -8, length: 1.3 },
-      pros: ["포용 태도", "온화한 관계성"],
-      cons: ["주도적 판단력이 약화되어 비칠 수 있음"]
+      pros: ["주변과의 마찰을 피해 대인운과 인덕이 원만함", "말년 주거지가 안락하고 가정운이 평온한 형국", "장수할 수 있는 평온한 건강 기운"],
+      cons: ["주도적 판단력이 결여되어 주도적 재물 축적력이 떨어질 수 있음", "과감한 대운의 기회를 눈앞에서 놓칠 우려"]
     },
     {
       name: "장미 (長眉)",
@@ -159,8 +159,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["결단력"],
       caution: "새로운 전략적 도전에 직면했을 때 안정적 현실 안주에 갇힐 가능성이 있습니다.",
       target: { tilt: 4, length: 1.5 },
-      pros: ["안정성", "두터운 인내력"],
-      cons: ["보수적 판단에 갇힐 우려가 있음"]
+      pros: ["복록이 무궁하고 평생 무병장수할 건강운이 탁월함", "가문과 형제간에 평화가 가득하여 상속운이 풍성함", "꾸준한 저축으로 이뤄내는 안정적 재물운"],
+      cons: ["변화를 싫어하여 중년기에 큰 사업적 변화나 투자를 망설이다 기회를 잃음", "과도한 인내로 화병 등 만성적 건강 지표 주의"]
     }
   ],
   nose: [
@@ -172,8 +172,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["대인운"],
       caution: "지나치게 고고한 자존심으로 인해 아랫사람과의 융화가 결여될 수 있습니다.",
       target: { lengthRatio: 0.38, widthRatio: 0.75 },
-      pros: ["목표 의식", "강한 책임감"],
-      cons: ["완벽주의 성향으로 비칠 수 있음"]
+      pros: ["일국을 좌우할 높은 승진 관운과 명예운을 지님", "자신만의 실력으로 큰 재물을 성취할 제왕적 재물운", "당당한 존재감으로 가문을 일으킬 운세"],
+      cons: ["자존심이 지나치게 강해 자손운과 대인 인덕에 외로움이 따름", "부부간의 소통 부족으로 가정내 갈등수 발생 우려"]
     },
     {
       name: "사자코 (獅子鼻)",
@@ -183,8 +183,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["인간관계운"],
       caution: "타인의 합리적인 의견 제시에 고집을 굽히지 않아 갈등이 발생하기 쉽습니다.",
       target: { lengthRatio: 0.32, widthRatio: 0.95 },
-      pros: ["포용력", "인간관계 관리 능력"],
-      cons: ["과소비나 씀씀이가 커질 수 있음"]
+      pros: ["부하와 수하를 이끄는 리더십 대인운이 막강함", "스스로 상업이나 투자를 전개하여 큰 재물을 일굴 부호운", "난세에도 굴하지 않는 강력한 직업적 생존운"],
+      cons: ["독단적 기세로 인해 파트너와의 동업운에 균열이 생길 조짐", "말년에 독선으로 치우쳐 가정이 적막해질 수 있음"]
     },
     {
       name: "복코 (懸膽鼻)",
@@ -194,8 +194,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["결단력"],
       caution: "리스크 감수를 지나치게 경계하여 적극적인 투자나 변화에 주저하는 성향입니다.",
       target: { lengthRatio: 0.34, widthRatio: 0.88 },
-      pros: ["저축성", "리스크 감쇄 능력"],
-      cons: ["공격적 투자 판단을 망설일 수 있음"]
+      pros: ["평생 먹고사는 걱정이 없는 천부적 재물운과 식복", "유산이나 가산을 마르지 않게 가두어 둘 상속운", "말년으로 갈수록 자산이 불어나는 복록의 관상"],
+      cons: ["도전을 극도로 꺼려 큰 인생 역전의 횡재 대운을 지연시킴", "지나친 안주로 인해 중년기 발전 속도가 정체될 우려"]
     },
     {
       name: "재상코 (截筒鼻)",
@@ -205,8 +205,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["추진력"],
       caution: "완벽주의적 일 처리 기조로 인해 동료들과 아랫사람에게 경직된 잣대를 세우기 쉽습니다.",
       target: { lengthRatio: 0.36, widthRatio: 0.80 },
-      pros: ["규율 관리력", "원칙 준수"],
-      cons: ["융통성이 다소 결여되어 비칠 수 있음"]
+      pros: ["공직이나 주요 관직에서 장관 급에 오를 수 있는 출중한 관운", "청렴하고 신뢰도가 높아 귀인들이 끌어주는 인덕", "자산의 누수 없이 명예롭게 부를 쌓을 운세"],
+      cons: ["경직된 잣대로 인해 대인 관계가 소원해지고 형제운이 다소 저조할 우려", "비타협성으로 인해 말년에 동료들로부터 고립될 조짐"]
     },
     {
       name: "군자코 (君子鼻)",
@@ -216,8 +216,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["권력운"],
       caution: "권력을 향한 투쟁적인 욕심이나 파괴적인 성취 에너지는 상대적으로 부족합니다.",
       target: { lengthRatio: 0.33, widthRatio: 0.82 },
-      pros: ["중용 지향성", "안정된 시선"],
-      cons: ["주도적 돌파 의지가 부족하게 보일 수 있음"]
+      pros: ["일생에 큰 재난이나 송사가 없는 지극히 평탄한 안전운", "말년까지 가족들이 효도하고 온화하게 안착할 가문운", "무난하고 원만한 대인 친화운"],
+      cons: ["큰 권세나 일국 최고의 대부호가 될 파괴적인 대운은 부족할 조짐", "현상 유지에 머물러 큰 투자의 돌파를 머뭇거릴 수 있음"]
     }
   ],
   mouth: [
@@ -229,8 +229,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["인간관계운"],
       caution: "언사(言辭)가 너무 단호하고 무거워 아랫사람이 친근하게 다가오기 어렵습니다.",
       target: { ratio: 2.8, tilt: 0.08 },
-      pros: ["설득력", "대화 소통 능력"],
-      cons: ["말의 영향력이 불필요하게 커질 수 있음"]
+      pros: ["말로써 수하를 부리고 신뢰를 장악하는 제왕적 언변 관운", "말년으로 갈수록 가문이 번창하고 자손이 길할 가주운", "안정된 의식주가 평생 보장되는 재물 수용운"],
+      cons: ["말이 너무 단호하여 가족 간이나 부부간에 다소 적막감이 깃들 조짐", "유연성 부족으로 부하 직원들의 불만을 살 우려"]
     },
     {
       name: "월형구 (仰月口)",
@@ -240,8 +240,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["결단력"],
       caution: "유려함이 지나쳐 자칫 신뢰성이나 무게감을 잃을 수 있으니 약속에 신중해야 합니다.",
       target: { ratio: 3.2, tilt: 0.12 },
-      pros: ["공감 능력", "친화적 호감"],
-      cons: ["감정적인 영향에 치우치기 쉬움"]
+      pros: ["사교력과 언변이 대단히 출중하여 사방에 귀인이 돕는 대인운", "배우자운이 대단히 길하여 화목하고 부유한 가정을 일굼", "만인의 사랑과 신망을 받는 직업적 인기 대운"],
+      cons: ["귀가 얇고 감정에 쉽게 치우쳐 금전 거래 시 보증이나 사기 주의 필요", "인정이 너무 많아 맺고 끊는 재물 관리가 흔들릴 조짐"]
     },
     {
       name: "방형구 (四字口)",
@@ -251,8 +251,8 @@ const PHYSIOGNOMY_DB = {
       weak: ["추진력"],
       caution: "무뚝뚝하거나 지나치게 차가운 인상을 주어 주변의 감정적 거리를 만들 수 있습니다.",
       target: { ratio: 2.4, tilt: 0.02 },
-      pros: ["신뢰성", "성실한 성정"],
-      cons: ["의사 표현이 다소 단조롭게 비칠 수 있음"]
+      pros: ["약속을 엄수하여 신뢰를 바탕으로 한 상업적 재물운이 높음", "말년까지 기복 없이 가산이 탄탄히 누적되는 재정 안정운", "조상의 유산을 올바르게 물려받을 자손 상속운"],
+      cons: ["표현이 경직되어 부부간의 감정 소통이 막히고 가정이 차가워질 우려", "새로운 환경 변화에 느리게 대처하여 큰 기회를 놓칠 가능성"]
     },
     {
       name: "앵도구 (櫻桃口)",
@@ -722,6 +722,22 @@ function evaluatePhysiognomy(metrics) {
   };
 }
 
+function mapKeyToKorean(key) {
+  const map = {
+    leadership: "통솔 패기운 (統率)",
+    judgment: "혜안 지표 (慧眼)",
+    wealth: "재물 축적운 (財帛)",
+    power: "직업 관운 (官祿)",
+    interpersonal: "대인 인덕운 (人德)",
+    relationship: "부부 가정운 (家庭)",
+    social: "사회 활동운 (社會)",
+    lateLife: "말년 안정운 (地閣)",
+    drive: "추진 기세운 (推進)",
+    determination: "용맹 결단운 (決斷)"
+  };
+  return map[key] || key;
+}
+
 function calculateFinalReport(selections, metrics) {
   const energyLevels = {
     leadership: 3.5,
@@ -793,10 +809,50 @@ function calculateFinalReport(selections, metrics) {
   const jaw = selections.jaw.item.name.split(" ")[0]; // "장군턱", "원형턱" 등
   const forehead = selections.forehead.item.name.split(" ")[0]; // "제왕이마" 등
 
-  let bestTitle = "영의정 재상의 상 (宰相之相)"; // Default fallback
+  let bestTitle = "영의정 재상의 상 (領議政之相)"; // Default fallback
 
-  // Rule-Based Decision Logic matching user spec
-  if (eye === "봉황안" && forehead === "제왕이마" && nose === "용골코" && jaw === "장군턱") {
+  // Rule-Based Decision Logic (26-path refined rules)
+  if (eye === "봉황안" && forehead === "제왕이마" && nose === "용골코" && jaw === "원형턱") {
+    bestTitle = "태평성대를 이끌 명군의 상 (明君之相)";
+  } else if (eye === "용안" && forehead === "제왕이마" && nose === "용골코" && jaw === "장군턱") {
+    bestTitle = "천하를 호령할 패왕의 상 (覇王之相)";
+  } else if (eye === "학안" && forehead === "학자이마" && nose === "군자코" && cheek === "평형광대" && jaw === "원형턱") {
+    bestTitle = "만민을 치유할 성현의 상 (聖賢之相)";
+  } else if (eye === "호안" && jaw === "장군턱" && brow === "팔자미" && nose === "사자코") {
+    bestTitle = "민초를 구휼할 의적의 상 (義賊之相)";
+  } else if (eye === "사안" && brow === "일자미" && nose === "군자코" && cheek === "장군광대" && jaw === "장군턱") {
+    bestTitle = "조정을 뒤흔들 간신의 상 (奸臣之相)";
+  } else if (eye === "원안" && brow === "월미" && nose === "군자코" && mouth === "월형구" && cheek === "평형광대") {
+    bestTitle = "풍류를 즐기는 한량의 상 (閑良之相)";
+  } else if (nose === "사자코" && mouth === "월형구" && forehead === "부귀이마" && jaw === "원형턱" && eye === "세안") {
+    bestTitle = "오대양 육대주를 누빌 대거상의 상 (巨商之相)";
+  } else if (eye === "호안" && brow === "검미" && nose === "재상코" && jaw === "방형턱") {
+    bestTitle = "철옹성을 지킬 수성대장의 상 (守城大將之相)";
+  } else if (eye === "사안" && brow === "검미" && nose === "용골코" && jaw === "장군턱") {
+    bestTitle = "강호를 휩쓸 천재 검객의 상 (劍客之相)";
+  } else if (eye === "학안" && forehead === "학자이마" && brow === "용미" && nose === "군자코") {
+    bestTitle = "백성의 등불이 될 대제학의 상 (大提學之相)";
+  } else if (eye === "용안" && brow === "용미" && forehead === "제왕이마" && nose === "재상코") {
+    bestTitle = "황실을 조율하는 영의정의 상 (領議政之相)";
+  } else if (eye === "봉황안" && brow === "월미" && forehead === "부귀이마" && cheek === "평형광대") {
+    bestTitle = "왕실의 지혜로운 대비의 상 (大妃之相)";
+  } else if (eye === "세안" && brow === "팔자미" && nose === "재상코" && forehead === "학자이마") {
+    bestTitle = "하늘의 뜻을 읽는 천문학자의 상 (天文學者之相)";
+  } else if (eye === "세안" && brow === "검미" && nose === "군자코" && jaw === "방형턱") {
+    bestTitle = "강호에 은둔한 절세 고수의 상 (隱遁高手之相)";
+  } else if (eye === "원안" && brow === "월미" && mouth === "앵도구" && mouth === "월형구") {
+    bestTitle = "만인의 마음을 사로잡을 가객의 상 (歌客之相)";
+  } else if (eye === "용안" && brow === "검미" && nose === "용골코" && jaw === "장군턱") {
+    bestTitle = "나라를 구하는 호국영웅의 상 (護國英雄之相)";
+  } else if (eye === "장안" && brow === "일자미" && nose === "사자코" && cheek === "장군광대") {
+    bestTitle = "무에서 유를 창조할 개척자의 상 (開拓者之相)";
+  } else if (eye === "세안" && brow === "일자미" && nose === "복코" && mouth === "방형구") {
+    bestTitle = "황실의 재정을 관리하는 호조판서의 상 (戶曹판서之相)";
+  } else if (eye === "사안" && brow === "검미" && nose === "사자코" && cheek === "제왕광대") {
+    bestTitle = "난세를 틈타 일어설 야심가의 상 (野心家之相)";
+  } else if (eye === "학안" && brow === "팔자미" && nose === "군자코" && mouth === "방형구") {
+    bestTitle = "학덕을 지키는 청렴한 선비의 상 (士林之相)";
+  } else if (eye === "봉황안" && forehead === "제왕이마" && nose === "용골코" && jaw === "장군턱") {
     bestTitle = "천하를 다스릴 상 (희귀) (天下之相)";
   } else if (eye === "봉황안" && brow === "용미" && forehead === "제왕이마") {
     bestTitle = "왕의 상 (王之相)";
@@ -811,9 +867,19 @@ function calculateFinalReport(selections, metrics) {
   } else {
     // Dynamic distance backup for other unique combinations
     let minDiff = Infinity;
+    const ruleTitles = [
+      "태평성대를 이끌 명군의 상 (明君之相)", "천하를 호령할 패왕의 상 (覇王之相)", "만민을 치유할 성현의 상 (聖賢之相)",
+      "민초를 구휼할 의적의 상 (義賊之相)", "조정을 뒤흔들 간신의 상 (奸臣之相)", "풍류를 즐기는 한량의 상 (閑良之相)",
+      "오대양 육대주를 누빌 대거상의 상 (巨商之相)", "철옹성을 지킬 수성대장의 상 (守城大將之相)", "강호를 휩쓸 천재 검객의 상 (劍客之相)",
+      "백성의 등불이 될 대제학의 상 (大提學之相)", "황실을 조율하는 영의정의 상 (領議政之相)", "왕실의 지혜로운 대비의 상 (大妃之相)",
+      "하늘의 뜻을 읽는 천문학자의 상 (天文學者之相)", "강호에 은둔한 절세 고수의 상 (隱遁高手之相)", "만인의 마음을 사로잡을 가객의 상 (歌客之相)",
+      "나라를 구하는 호국영웅의 상 (護國英雄之相)", "무에서 유를 창조할 개척자의 상 (開拓者之相)", "황실의 재정을 관리하는 호조판서의 상 (戶曹판서之相)",
+      "난세를 틈타 일어설 야심가의 상 (野心家之相)", "학덕을 지키는 청렴한 선비의 상 (士林之相)", "왕의 상 (王之相)",
+      "장군의 상 (將軍之相)", "책사의 상 (策士之相)", "상인의 상 (商人之相)", "개국공신의 상 (開國功臣之相)", "천하를 다스릴 상 (희귀) (天下之相)"
+    ];
     TITLES_DATABASE.forEach(title => {
       // Avoid rule titles in the distance fallback to keep them unique
-      if (["왕의 상 (王之相)", "장군의 상 (將軍之相)", "책사의 상 (策士之相)", "상인의 상 (商人之相)", "개국공신의 상 (開國功臣之相)", "천하를 다스릴 상 (희귀) (天下之相)"].includes(title.name)) {
+      if (ruleTitles.includes(title.name)) {
         return;
       }
       let diffSum = 0;
@@ -1256,9 +1322,9 @@ function compilePhysiognomyReport() {
   const weakestTraitName = mapKeyToKorean(weakestTraitKey);
   
   review += `안형 정밀 대조 상 '${eyeName}' 안형이 검출되며, 비골 대칭으로는 '${noseName}' 비형으로 정렬됨. `;
-  review += `오관의 대칭 균형 중 '${topTrait}' 계수가 ${Math.round(sortedTraits[0].val * 20)}%로 가장 우수하여 전략적 판단과 조직 관리 속도가 빠른 경향이 우세함. `;
-  review += `반면, 현재 ${targetFeatureName}의 골격선과 균형이 '${targetFeatureState}'형 분포에 치우쳐 있어, 이와 직접 연동된 '${weakestTraitName}' 수치가 ${Math.round(sortedTraits[sortedTraits.length - 1].val * 20)}% 수준으로 하락함. `;
-  review += `이에 따라 전체적인 ${targetEnergyName} 부문에서 리스크 제어 및 조율 한계가 도출되는 경향을 보임.`;
+  review += `오관의 대칭 균형 중 '${topTrait}'의 기운이 ${Math.round(sortedTraits[0].val * 20)}%로 가장 강력하여 초년/중년기에 높은 명예와 관운을 얻어 가문을 일으킬 기상이 보입니다. `;
+  review += `반면, 현재 ${targetFeatureName}의 골격선과 균형이 '${targetFeatureState}'형 분포에 치우쳐 있어, 이와 직접 연동된 '${weakestTraitName}'의 흐름이 ${Math.round(sortedTraits[sortedTraits.length - 1].val * 20)}% 수준으로 주춤할 우려가 있습니다. `;
+  review += `이에 따라 전체적인 ${targetEnergyName} 부문에서 예상치 못한 대인 갈등이나 말년의 가산 조율에 유의할 필요가 있다고 판단됩니다.`;
 
   reviewText.textContent = review;
 
@@ -1295,13 +1361,13 @@ function compilePhysiognomyReport() {
   // Technical metrics list - Displays "눈은 무슨 눈, 코는 무슨 코" explicitly for all 7 features
   metricRationaleList.innerHTML = "";
   const rationales = [
-    `• 눈(眼): ${selections.eye.item.name} [일치율 ${selections.eye.score}%] - 가로-세로 비율(${metrics.eye.ratio.toFixed(1)}), 눈꼬리 편차(${metrics.eye.tilt.toFixed(1)}°) 계측`,
-    `• 눈썹(眉): ${selections.eyebrow.item.name} [일치율 ${selections.eyebrow.score}%] - 정렬 경사(${metrics.eyebrow.tilt.toFixed(1)}°) 및 너비 비율(${metrics.eyebrow.length.toFixed(2)}) 산출`,
-    `• 코(鼻): ${selections.nose.item.name} [일치율 ${selections.nose.score}%] - 비골 길이(${metrics.nose.lengthRatio.toFixed(2)}), 콧망울 분포도(${metrics.nose.widthRatio.toFixed(2)}) 필터 매핑`,
-    `• 입(口): ${selections.mouth.item.name} [일치율 ${selections.mouth.score}%] - 입꼬리 상승 곡률(${metrics.mouth.tilt.toFixed(3)}) 및 종횡비(${metrics.mouth.ratio.toFixed(1)}) 비교`,
-    `• 광대(顴): ${selections.cheekbones.item.name} [일치율 ${selections.cheekbones.score}%] - 광골 융기 계수(${metrics.cheekbones.prominence.toFixed(2)}) 대칭도 검출`,
-    `• 턱(頤): ${selections.jaw.item.name} [일치율 ${selections.jaw.score}%] - 하단 턱뼈 각도(${metrics.jaw.angle.toFixed(1)}°) 및 하관 면적 대비(${metrics.jaw.widthRatio.toFixed(2)})`,
-    `• 이마(額): ${selections.forehead.item.name} [일치율 ${selections.forehead.score}%] - 전두골 영역 높이 비율(${metrics.forehead.heightRatio.toFixed(2)}) 매칭 완료`
+    `• 눈(眼): ${selections.eye.item.name} [일치율 ${selections.eye.score}%] - 중년 재물운과 기품 상징. 비율(${metrics.eye.ratio.toFixed(1)}), 편차(${metrics.eye.tilt.toFixed(1)}°) 분석`,
+    `• 눈썹(眉): ${selections.eyebrow.item.name} [일치율 ${selections.eyebrow.score}%] - 형제운과 대인 신뢰 상징. 경사(${metrics.eyebrow.tilt.toFixed(1)}°) 및 비율(${metrics.eyebrow.length.toFixed(2)}) 산출`,
+    `• 코(鼻): ${selections.nose.item.name} [일치율 ${selections.nose.score}%] - 재백궁(평생 재물운) 상징. 길이(${metrics.nose.lengthRatio.toFixed(2)}), 콧망울 너비(${metrics.nose.widthRatio.toFixed(2)}) 대조`,
+    `• 입(口): ${selections.mouth.item.name} [일치율 ${selections.mouth.score}%] - 말년 복록과 자손운 상징. 상승각(${metrics.mouth.tilt.toFixed(3)}) 및 종횡비(${metrics.mouth.ratio.toFixed(1)}) 비교`,
+    `• 광대(顴): ${selections.cheekbones.item.name} [일치율 ${selections.cheekbones.score}%] - 직업 권세와 통솔 기틀 상징. 융기 계수(${metrics.cheekbones.prominence.toFixed(2)}) 대칭 검출`,
+    `• 턱(頤): ${selections.jaw.item.name} [일치율 ${selections.jaw.score}%] - 노년 안정과 수명(壽福) 상징. 턱뼈 각도(${metrics.jaw.angle.toFixed(1)}°) 및 하관 비례 비교`,
+    `• 이마(額): ${selections.forehead.item.name} [일치율 ${selections.forehead.score}%] - 초년 관운과 조상 음덕 상징. 전두골 높이 비율(${metrics.forehead.heightRatio.toFixed(2)}) 매칭`
   ];
 
   rationales.forEach(text => {
@@ -1313,19 +1379,19 @@ function compilePhysiognomyReport() {
   // Wellness Solutions Showcases matching (Linked with the lowest group)
   if (chosenGroup === 1) {
     recoTitle.textContent = `${targetFeatureName} 보정을 통한 ${targetEnergyName} 보완`;
-    recoExplanation.innerHTML = `얼굴 분석 결과 ${targetFeatureName}이(가) '${targetFeatureState}'의 상태를 보이고 있어, 이로 인해 상대적으로 약화된 <strong>추진 에너지 및 대인 신뢰도</strong> 지표를 높이기 위한 집중 보완 솔루션입니다. 눈썹의 균형을 고르게 조율하는 데 기여하는 제품군입니다.`;
+    recoExplanation.innerHTML = `얼굴 분석 결과 ${targetFeatureName}이(가) '${targetFeatureState}'의 상태를 보이고 있어, 눈썹의 기하학적 균형을 조율하여 부족한 <strong>대인 인덕 및 추진 기세운</strong>을 보강하고, 형제/동료 관계의 기운을 원만히 가동하기 위한 솔루션입니다.`;
     recoImage.src = "assets/image1.png";
     btnViewProduct.href = "https://www.hermes.com/kr/ko/product/아이브로우-펜셜-H083072V010/";
     btnBuyProduct.href = "https://www.hermes.com/kr/ko/category/뷰티/눈/";
   } else if (chosenGroup === 2) {
     recoTitle.textContent = `${targetFeatureName} 보정을 통한 ${targetEnergyName} 보완`;
-    recoExplanation.innerHTML = `얼굴 분석 결과 ${targetFeatureName}의 정렬이 '${targetFeatureState}'형태를 띠고 있어, 이로 인해 연동 하락한 <strong>대인 조화 및 말년 지수</strong>를 조화롭게 가동하기 위한 솔루션입니다. 입매 주변 근육의 비대칭 긴장을 해소하고 정돈을 유도합니다.`;
+    recoExplanation.innerHTML = `얼굴 분석 결과 ${targetFeatureName}의 정렬이 '${targetFeatureState}' 형태를 띠고 있어, 입술 주변의 하관 라인을 정돈하여 약화된 <strong>말년 안정 및 부부 가정운</strong>을 보강하고, 가문의 복록을 노년까지 안정적으로 이끌어가기 위한 솔루션입니다.`;
     recoImage.src = "assets/image2.png";
     btnViewProduct.href = "https://www.rolex.com/ko/watches/find-rolex";
     btnBuyProduct.href = "https://www.rolex.com/ko/watches/find-rolex/classic-watches";
   } else {
     recoTitle.textContent = `${targetFeatureName} 보정을 통한 ${targetEnergyName} 보완`;
-    recoExplanation.innerHTML = `얼굴 분석 결과 ${targetFeatureName}의 융기 균형이 '${targetFeatureState}'의 상태를 지니고 있어, 이로 인해 결여된 <strong>조직 통솔력 및 권한 지수</strong>를 상승시키기 위한 솔루션입니다. 광대 및 페이셜 윤곽 대칭 라인을 설계해 줍니다.`;
+    recoExplanation.innerHTML = `얼굴 분석 결과 ${targetFeatureName}의 융기 균형이 '${targetFeatureState}'의 상태를 지니고 있어, 광대와 페이셜 윤곽의 대칭 밸런스를 바로잡아 결여된 <strong>사회적 관운 및 통솔 패기운</strong>을 강력히 상승시키기 위한 솔루션입니다.`;
     recoImage.src = "assets/image3.png";
     btnViewProduct.href = "https://www.hermes.com/kr/ko/product/페이스-마사저-H083110V000/";
     btnBuyProduct.href = "https://www.hermes.com/kr/ko/category/뷰티/페이스/";
@@ -1473,10 +1539,10 @@ async function downloadReportCard() {
   c.font = "bold 12px 'Noto Serif KR', serif";
   c.fillStyle = "#B88A44";
   c.textAlign = "left";
-  c.fillText("성향적 장점 (長處)", 80, 415);
+  c.fillText("관상적 길조 (吉兆)", 80, 415);
   
   c.fillStyle = "#C85A5A";
-  c.fillText("조율이 이로운 점 (愼重)", canvas.width / 2 + 20, 415);
+  c.fillText("주의할 흉조 (愼重)", canvas.width / 2 + 20, 415);
 
   c.font = "400 10.5px 'Noto Serif KR', serif";
   c.fillStyle = "#332A1C";
