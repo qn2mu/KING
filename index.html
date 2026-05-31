@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상相 - AI 실시간 얼굴 분석 서비스</title>
+  <meta name="description" content="얼굴의 기하학적 비율과 대칭을 정밀 측정하여 개인의 성향과 밸런스 인사이트를 제공하는 프리미엄 데이터 분석 도구입니다.">
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Abstract Ambient Glow Background (No traditional backdrops) -->
+  <div class="ambient-glow"></div>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    
+    <!-- Premium Header -->
+    <header class="app-header">
+      <h1 class="logo-text">상<span>相</span></h1>
+      <p class="subtitle">AI Face Analytics</p>
+    </header>
+
+    <!-- STEP 1: Welcome / Product Hero Section -->
+    <section id="welcome-screen" class="view-section active">
+      <div class="hero-section">
+        <!-- Visual Luminous Core -->
+        <div class="luminous-core-container">
+          <div class="luminous-core"></div>
+        </div>
+
+        <h2 class="hero-title">
+          얼굴의 기하학적 균형과<br>성향의 상관관계.
+        </h2>
+        <p class="hero-description">
+          카메라 인식 센서를 통해 얼굴 오관(五官)의 비례와 대칭을 실시간 정밀 측정합니다. 개인 고유의 구조적 데이터를 분석하고 밸런스 인사이트를 획득하십시오.
+        </p>
+        
+        <div class="guide-box">
+          <div class="guide-item">
+            <span class="guide-num">01</span>
+            <span class="guide-txt">정면의 밝은 조도 환경 유지</span>
+          </div>
+          <div class="guide-item">
+            <span class="guide-num">02</span>
+            <span class="guide-txt">안경 및 마스크 착용 해제 권장</span>
+          </div>
+        </div>
+
+        <button id="btn-start" class="btn btn-primary">
+          <span class="btn-text">분석 시작하기</span>
+        </button>
+
+        <footer class="service-disclaimer">
+          본 도구는 정량적 비율 측정 결과를 기반으로 보조적인 분석 리포트를 제공하며, 성품이나 지능 등을 규정하지 않는 학술 및 엔터테인먼트 목적의 소프트웨어입니다.
+        </footer>
+      </div>
+    </section>
+
+    <!-- STEP 2: Scanner / Sensor View -->
+    <section id="scanner-screen" class="view-section">
+      <div class="scanner-wrapper">
+        <div class="sensor-viewport">
+          <video id="webcam" autoplay playsinline muted></video>
+          <canvas id="overlay-canvas"></canvas>
+          
+          <!-- Camera Error Overlay -->
+          <div id="camera-error-overlay" class="camera-error-overlay">
+            <div class="error-icon">!</div>
+            <div class="error-title">카메라 감지 실패</div>
+            <p class="error-msg" id="camera-error-msg">
+              얼굴 정밀 분석을 위해 웹캠 권한 승인이 필요합니다. 브라우저 설정에서 활성화를 확인하십시오.
+            </p>
+            <button id="btn-error-retry" class="btn btn-secondary">다시 시도</button>
+          </div>
+
+          <!-- Sophisticated Viewfinder -->
+          <div class="face-guide-frame">
+            <div class="face-guide-oval"></div>
+            <div class="guide-caption">정면을 응시한 채 정지해 주십시오</div>
+          </div>
+        </div>
+
+        <!-- Realtime Analysis HUD -->
+        <div class="hud-panel">
+          <div class="hud-header">
+            <span class="current-step-title">대기 중</span>
+            <span class="hud-progress-percent" id="hud-progress-percent">0%</span>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-fill" id="scanner-progress"></div>
+          </div>
+          <div class="scan-detail-msg" id="scan-message">
+            측정 모듈 전개 중
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: Studio Flash Overlay -->
+    <div id="shutter-flash" class="shutter-flash"></div>
+
+    <!-- STEP 4: Results Editorial Report -->
+    <section id="result-screen" class="view-section">
+      <div class="result-scroll-wrapper">
+        
+        <!-- Elegant Insight Report Card (Toss/Apple Style) -->
+        <div id="result-card" class="result-card">
+          <div class="card-content">
+            
+            <header class="report-header">
+              <span class="report-tag">ANALYTICS REPORT</span>
+              <h2 class="card-main-title">분석 인사이트 요약</h2>
+              <p class="card-subtitle">AI Face Metrics Report</p>
+            </header>
+
+            <hr class="flat-divider">
+
+            <!-- Captured Face Frame -->
+            <div class="face-snapshot-container">
+              <div class="face-snapshot-frame" id="snapshot-frame">
+                <div class="snapshot-overlay"></div>
+              </div>
+            </div>
+
+            <!-- Title & Features -->
+            <div class="report-section title-section">
+              <div class="metric-label">구조적 성향 분류</div>
+              <h3 id="result-title" class="matched-title">전략적 조율형</h3>
+              <div id="result-features-list" class="feature-tags">
+                <!-- Dynamically Generated -->
+              </div>
+            </div>
+
+            <hr class="flat-divider">
+
+            <!-- Quantitative Metrics (Horizontal Bars instead of traditional stars) -->
+            <div class="report-section energy-metrics-section">
+              <div class="metric-label">요소별 강점 지표</div>
+              <div class="metrics-grid">
+                <div class="metric-group">
+                  <div class="group-title">우수 요인 (Top Traits)</div>
+                  <ul id="positive-energies" class="metric-progress-list">
+                    <!-- Generated Dynamically -->
+                  </ul>
+                </div>
+                
+                <div class="metric-group">
+                  <div class="group-title">보완 요인 (Adjustments)</div>
+                  <ul id="warning-energies" class="metric-progress-list">
+                    <!-- Generated Dynamically -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <hr class="flat-divider">
+
+            <!-- Master Insight Text -->
+            <div class="report-section insight-section">
+              <div class="metric-label">종합 데이터 해석</div>
+              <div class="insight-box">
+                <p id="review-text" class="insight-paragraph">
+                  대칭성과 부위별 특징 데이터를 종합적으로 해석한 결과입니다.
+                </p>
+              </div>
+            </div>
+
+            <hr class="flat-divider">
+
+            <!-- Structural Data Details -->
+            <div class="report-section details-section">
+              <div class="metric-label">측정 부위별 기하학 근거</div>
+              <ul id="metric-rationale-list" class="rationale-list">
+                <!-- Detailed metrics here -->
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Premium Solution Recommendation -->
+        <div class="recommendation-card">
+          <span class="report-tag accent">WELLNESS SOLUTION</span>
+          <h4 id="reco-title" class="reco-title">부족한 지표 보완을 위한 솔루션</h4>
+          <p id="reco-explanation" class="reco-desc">
+            특정 부위의 비대칭을 완화하고 근육의 정밀한 정돈을 유도하는 기하학적 밸런스 케어 제품군입니다.
+          </p>
+          
+          <div class="reco-product-showcase">
+            <img id="reco-image" src="assets/image1.png" alt="추천 제품">
+          </div>
+
+          <div class="reco-actions">
+            <a href="#" target="_blank" class="btn btn-secondary-outline" id="btn-view-product">제품 상세 정보</a>
+            <a href="#" target="_blank" class="btn btn-primary-sm" id="btn-buy-product">제품 선택하기</a>
+          </div>
+        </div>
+
+        <!-- Utility Action Row -->
+        <div class="action-buttons-container">
+          <button id="btn-restart" class="btn btn-secondary">다시 측정하기</button>
+          <button id="btn-share" class="btn btn-primary">리포트 다운로드</button>
+        </div>
+
+        <p class="final-bottom-notes">
+          © 2026 AI Face Analytics “상相”. All rights reserved.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- LOADING OVERLAYS -->
+    <div id="global-loader" class="loader-overlay">
+      <div class="loader-content">
+        <div class="spinner-core">
+          <div class="spinner-orbit"></div>
+        </div>
+        <div class="loader-title">분석 엔진 구동 중</div>
+        <div class="loader-subtitle">실시간 랜드마크 모델 초기화 단계...</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Module Script -->
+  <script type="module" src="script.js"></script>
+  <script>
+    setTimeout(() => {
+      if (!window.appLoaded) {
+        console.warn("Module script script.js failed to load. Checking protocol...");
+        if (window.location.protocol === 'file:') {
+          const warningDiv = document.createElement('div');
+          warningDiv.style.position = 'fixed';
+          warningDiv.style.bottom = '20px';
+          warningDiv.style.left = '50%';
+          warningDiv.style.transform = 'translateX(-50%)';
+          warningDiv.style.backgroundColor = '#1D1D1F';
+          warningDiv.style.color = '#F5F5F7';
+          warningDiv.style.border = '1px solid rgba(255, 127, 80, 0.2)';
+          warningDiv.style.padding = '15px 20px';
+          warningDiv.style.borderRadius = '12px';
+          warningDiv.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+          warningDiv.style.zIndex = '999999';
+          warningDiv.style.textAlign = 'center';
+          warningDiv.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+          warningDiv.style.fontSize = '0.85rem';
+          warningDiv.style.lineHeight = '1.4';
+          warningDiv.style.width = '90%';
+          warningDiv.style.maxWidth = '440px';
+          warningDiv.innerHTML = `
+            <strong style="color: #FF8A65; display: block; margin-bottom: 4px;">⚠️ 로컬 파일(file://) 실행 보안 제한</strong>
+            브라우저 보안 정책(CORS)으로 인해 index.html을 더블클릭해서 열면 동작하지 않습니다.<br>
+            로컬 웹 서버(VS Code Live Server 등)로 열거나, GitHub Pages에 업로드하여 실행해 주시기 바랍니다.
+          `;
+          document.body.appendChild(warningDiv);
+        } else {
+          alert("스크립트(script.js)를 불러오지 못했습니다. 파일 경로를 확인해 주세요.");
+        }
+      }
+    }, 1200);
+  </script>
+</body>
+</html>
