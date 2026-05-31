@@ -1076,6 +1076,39 @@ const SCAN_SUBMESSAGES = {
   scanning_forehead: ["이마 수평 곡률 스캔...", "관자놀이 볼륨 비례 대입...", "전두골 입체 각도 산정..."]
 };
 
+/* ==========================================================================
+   POSE STABILITY ALIGNMENT
+   ========================================================================== */
+function checkFaceAlignment(landmarks) {
+  if (!landmarks) return false;
+  
+  const nose = landmarks[4];
+  const chin = landmarks[152];
+  const left = landmarks[234];
+  const right = landmarks[454];
+  const top = landmarks[10];
+
+  if (!nose || !chin || !left || !right || !top) return false;
+
+  const faceCenterX = (left.x + right.x) / 2;
+  const faceCenterY = (top.y + chin.y) / 2;
+
+  // Horizontal center offset (0.5 is absolute center)
+  const isCenteredX = Math.abs(faceCenterX - 0.5) < 0.15;
+  // Vertical center offset (0.5 is absolute center)
+  const isCenteredY = Math.abs(faceCenterY - 0.5) < 0.15;
+
+  const faceWidth = getDistance(left, right);
+  // Allow a wider range for scaling (from 0.18 to 0.60) to prevent getting stuck
+  const isCorrectScale = faceWidth > 0.18 && faceWidth < 0.60;
+
+  const distToLeft = getDistance(nose, left);
+  const distToRight = getDistance(nose, right);
+  const isFacingFront = Math.abs(distToLeft - distToRight) / faceWidth < 0.20;
+
+  return isCenteredX && isCenteredY && isCorrectScale && isFacingFront;
+}
+
 async function processingLoop() {
   if (!faceLandmarker || currentStage === 'finished') return;
 
