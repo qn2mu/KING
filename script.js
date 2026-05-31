@@ -424,6 +424,7 @@ let cameraErrorOverlay, btnErrorRetry;
 let snapshotFrame, resultTitle, resultFeaturesList, positiveEnergiesList, warningEnergiesList;
 let reviewText, metricRationaleList, recoTitle, recoExplanation, recoImage, hudProgressPercent;
 let resultProsList, resultConsList;
+let luxuryTitle, luxuryMeta, luxurySpecLuck, luxurySpecPart;
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("[DOM CONTENT LOADED]");
@@ -462,6 +463,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
   resultProsList = document.getElementById("result-pros");
   resultConsList = document.getElementById("result-cons");
+
+  luxuryTitle = document.getElementById("luxury-title");
+  luxuryMeta = document.getElementById("luxury-meta");
+  luxurySpecLuck = document.getElementById("luxury-spec-luck");
+  luxurySpecPart = document.getElementById("luxury-spec-part");
 
   if (btnStart) btnStart.addEventListener("click", handleStart);
   if (btnRestart) btnRestart.addEventListener("click", resetToWelcome);
@@ -1383,18 +1389,30 @@ function compilePhysiognomyReport() {
     recoImage.src = "assets/image1.png";
     btnViewProduct.href = "https://www.hermes.com/kr/ko/product/아이브로우-펜셜-H083072V010/";
     btnBuyProduct.href = "https://www.hermes.com/kr/ko/category/뷰티/눈/";
+    if (luxuryTitle) luxuryTitle.textContent = "Hermès Beauty";
+    if (luxuryMeta) luxuryMeta.textContent = "눈썹 기하 조율 펜슬 & 웰니스 리프터";
+    if (luxurySpecLuck) luxurySpecLuck.textContent = "대인 인덕 및 추진 기세운";
+    if (luxurySpecPart) luxurySpecPart.textContent = `${targetFeatureState} 조율 (눈썹)`;
   } else if (chosenGroup === 2) {
     recoTitle.textContent = `${targetFeatureName} 보정을 통한 ${targetEnergyName} 보완`;
     recoExplanation.innerHTML = `얼굴 분석 결과 ${targetFeatureName}의 정렬이 '${targetFeatureState}' 형태를 띠고 있어, 입술 주변의 하관 라인을 정돈하여 약화된 <strong>말년 안정 및 부부 가정운</strong>을 보강하고, 가문의 복록을 노년까지 안정적으로 이끌어가기 위한 솔루션입니다.`;
     recoImage.src = "assets/image2.jpg";
     btnViewProduct.href = "https://www.rolex.com/ko/watches/find-rolex";
     btnBuyProduct.href = "https://www.rolex.com/ko/watches/find-rolex/classic-watches";
+    if (luxuryTitle) luxuryTitle.textContent = "Rolex Classic";
+    if (luxuryMeta) luxuryMeta.textContent = "입꼬리 균형 처방 & 페이스 스마일러";
+    if (luxurySpecLuck) luxurySpecLuck.textContent = "말년 안정 및 부부 가정운";
+    if (luxurySpecPart) luxurySpecPart.textContent = `${targetFeatureState} 조율 (입매)`;
   } else {
     recoTitle.textContent = `${targetFeatureName} 보정을 통한 ${targetEnergyName} 보완`;
     recoExplanation.innerHTML = `얼굴 분석 결과 ${targetFeatureName}의 융기 균형이 '${targetFeatureState}'의 상태를 지니고 있어, 광대와 페이셜 윤곽의 대칭 밸런스를 바로잡아 결여된 <strong>사회적 관운 및 통솔 패기운</strong>을 강력히 상승시키기 위한 솔루션입니다.`;
     recoImage.src = "assets/image3.png";
     btnViewProduct.href = "https://www.hermes.com/kr/ko/product/페이스-마사저-H083110V000/";
     btnBuyProduct.href = "https://www.hermes.com/kr/ko/category/뷰티/페이스/";
+    if (luxuryTitle) luxuryTitle.textContent = "Hermès Facial Care";
+    if (luxuryMeta) luxuryMeta.textContent = "광골 융기 윤곽기 & 리프팅 시트";
+    if (luxurySpecLuck) luxurySpecLuck.textContent = "사회적 관운 및 통솔 패기운";
+    if (luxurySpecPart) luxurySpecPart.textContent = `${targetFeatureState} 조율 (광골)`;
   }
 }
 /* ==========================================================================
