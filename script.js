@@ -1507,7 +1507,7 @@ async function downloadReportCard() {
   c.fillStyle = "#1A150E";
   c.textAlign = "center";
   c.font = "bold 20px 'Cinzel', serif";
-  c.fillText("👑 내가 왕이 될 상인가", canvas.width / 2, 70);
+  c.fillText("👑 상相", canvas.width / 2, 70);
   
   c.fillStyle = "#B88A44";
   c.font = "bold 13px 'Noto Serif KR', serif";
@@ -1664,7 +1664,7 @@ async function downloadReportCard() {
 
   // Exporter trigger
   const link = document.createElement("a");
-  link.download = `왕이될상인가_관상감정서_${Date.now()}.png`;
+  link.download = `상相_관상감정서_${Date.now()}.png`;
   link.href = canvas.toDataURL("image/png");
   link.click();
 }
